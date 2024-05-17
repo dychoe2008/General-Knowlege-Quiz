@@ -31,6 +31,5 @@ AGE_MAXIMUM = 11
 
 
 #Main Routine
-ask_age()
 main_age = ask_age()
 print(main_age)
