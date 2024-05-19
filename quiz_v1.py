@@ -4,7 +4,7 @@ By Daniel C
 """
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
-    invaild = "\n Sorry, you must enter a vaild name\n"
+    invaild = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
         print(invaild)
         string = str(input(question_01))
@@ -23,8 +23,6 @@ def ask_name():
     name = input("What is your name?: ")
     name_set_ = str_checker(name, "What is your name?: ")
     return name_set_
-
-
 
 #Main Routine
 welcome_screen()

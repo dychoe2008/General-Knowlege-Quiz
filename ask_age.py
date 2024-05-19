@@ -3,10 +3,9 @@ Ask for their age, check it with an integer checker, then check it's
 in the range of 5-11
 By Daniel C
 """
-
 def int_checker(question_02):
     """Checks the input was a null or string repeats until receives a int."""
-    invaild = "\n You must enter an integer that's 15-18\n"
+    invaild = "\n You must enter an integer that's from 5 to 11\n"
     num = ""
     while not num:
         try:
