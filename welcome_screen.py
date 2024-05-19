@@ -4,9 +4,9 @@ By Daniel C
 """
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
-    invaild = "\n Sorry, you must enter a vaild name\n"
+    invaild_str = "\n Sorry, you must enter a vaild name\n"
     while string.isalpha() is False:
-        print(invaild)
+        print(invaild_str)
         string = str(input(question_01))
     return string
 
