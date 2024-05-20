@@ -2,6 +2,7 @@
 This version will include component 1
 By Daniel C
 """
+# pylint: disable = c0103
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
     invaild_str = "\n Sorry, you must enter a vaild input\n"
@@ -23,6 +24,8 @@ def ask_name():
     name = input("What is your name?: ")
     name_set_ = str_checker(name, "What is your name?: ")
     return name_set_
+
+total_score = 0
 
 #Main Routine
 welcome_screen()

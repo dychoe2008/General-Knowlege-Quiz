@@ -2,6 +2,7 @@
 Make a welcome screen, make a string checker, ask for their name
 By Daniel C
 """
+# pylint: disable = c0103
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
     invaild_str = "\n Sorry, you must enter a vaild name\n"
@@ -24,7 +25,7 @@ def ask_name():
     set_name = str_checker(name, "What is your name?: ")
     return set_name
 
-
+total_score = 0
 
 #Main Routine
 welcome_screen()

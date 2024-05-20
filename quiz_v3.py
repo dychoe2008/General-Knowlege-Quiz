@@ -1,7 +1,8 @@
-"""Program for a general knowledge quiz about NZ V2
-This version will include component 1, 2
+"""Program for a general knowledge quiz about NZ V3
+This version will include component 1, 2, 3
 By Daniel C
 """
+# pylint: disable = c0103
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
     invaild_str = "\n Sorry, you must enter a vaild input\n"
@@ -76,6 +77,9 @@ AGE_MAXIMUM = 11
 YES_NO = ["Yes", "Y", "No", "N"]
 YES = ["Yes", "Y"]
 NO = ["No", "N"]
+
+total_score = 0
+
 
 #Main Routine
 welcome_screen()
