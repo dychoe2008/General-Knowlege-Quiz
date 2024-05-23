@@ -5,22 +5,22 @@ By Daniel C
 # pylint: disable = c0103
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
-    invaild_str = "\n Sorry, you must enter a vaild input\n"
+    invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
-        print(invaild_str)
+        print(invalid_str)
         string = str(input(question_01))
     return string
 
 def int_checker(question_02):
     """Checks the input was a null or string repeats until receives a int."""
-    invaild = "\n You must enter an integer that's 15-18\n"
+    invalid = "\n You must enter an integer that's 15-18\n"
     num = ""
     while not num:
         try:
             num = int(input(question_02))
             return num
         except ValueError:
-            print(invaild)
+            print(invalid)
 
 def welcome_screen():
     """Prints a welcome statement"""
@@ -32,17 +32,22 @@ def welcome_screen():
 
 def ask_name():
     """Asks what their name is"""
+    invalid_length = "\nSorry please enter a valid name length\n"
     name = input("What is your name?: ")
-    name_set_ = str_checker(name, "What is your name?: ")
-    return name_set_
+    set_name = str_checker(name, "What is your name?: ")
+    while len(set_name) < 3:
+        print(invalid_length)
+        name = input("What is your name?: ")
+        set_name = str_checker(name, "What is your name?: ")
+    return set_name
 
 def ask_age():
     """Asks for their age"""
-    invaild_age = "\n You must enter an whole number that's from 5 to 11\n"
+    invalid_age = "\n You must enter an whole number that's from 5 to 11\n"
     age = int_checker("What is your age?\n"
                       "(This will pick which Quiz you will be trying): ")
     while age > AGE_MAXIMUM or age < AGE_MINIMUM:
-        print(invaild_age)
+        print(invalid_age)
         age = int_checker("What is your age?\n"
                           "(This will pick which Quiz you will be trying): ")
     return age
@@ -51,7 +56,7 @@ def ask_age():
 AGE_MINIMUM = 5
 AGE_MAXIMUM = 11
 
-total_score = 0
+main_total_score = 0
 
 
 #Main Routine

@@ -5,22 +5,22 @@ By Daniel C
 """
 def int_checker(question_02):
     """Checks the input was a null or string repeats until receives a int."""
-    invaild = "\n You must enter an integer that's from 5 to 11\n"
+    invalid = "\n You must enter an integer that's from 5 to 11\n"
     num = ""
     while not num:
         try:
             num = int(input(question_02))
             return num
         except ValueError:
-            print(invaild)
+            print(invalid)
 
 def ask_age():
     """Asks for their age"""
-    invaild_age = "\n You must enter an whole number that's from 5 to 11\n"
+    invalid_age = "\n You must enter an whole number that's from 5 to 11\n"
     age = int_checker("What is your age?\n"
                       "(This will pick which Quiz you will be trying): ")
     while age > AGE_MAXIMUM or age < AGE_MINIMUM:
-        print(invaild_age)
+        print(invalid_age)
         age = int_checker("What is your age?\n"
                           "(This will pick which Quiz you will be trying): ")
     return age

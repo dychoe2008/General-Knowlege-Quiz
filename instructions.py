@@ -4,16 +4,16 @@ By Daniel C
 """
 def str_checker(string, question_01):
     """Checks if the everything in the input is in the alpahbet"""
-    invaild_str = "\n Sorry, you must enter a vaild input\n"
+    invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
-        print(invaild_str)
+        print(invalid_str)
         string = str(input(question_01))
     return string
 
 
 def instructions():
     """Print a list of instructions"""
-    invaild_answer = "\n Sorry, you must enter a vaild option\n"
+    invalid_answer = "\n Sorry, you must enter a vaild option\n"
     list_rules = input("(***Highly Recommended***) "
                        "\n\tWould you like a list of the Rules?" 
                        "'Y' or 'N': ").title()
@@ -28,11 +28,11 @@ def instructions():
               "Quiz A will be for 7 and under, "
               "whereas Quiz B will be for older than 7\n")
         print("\t\t***Of course NO CHEATING in any way!***")
-        print("\t\t\t\tEnjoy!! •ᴗ•\n")
+        print("\t\t\t\tEnjoy!! •ᴗ•")
     elif final_list_rules in NO:
-        print("\t\t\t\tEnjoy!! •ᴗ•\n")
+        print("\t\t\t\tEnjoy!! •ᴗ•")
     else:
-        print(invaild_answer)
+        print(invalid_answer)
         instructions()
 
 
