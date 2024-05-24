@@ -1,18 +1,23 @@
-"""Program for a general knowledge quiz about NZ V3
+"""Program for a general knowledge quiz about NZ V3.
+
 This version will include component 1, 2, 3
+
 By Daniel C
 """
 # pylint: disable = c0103
+
+
 def str_checker(string, question_01):
-    """Checks if the everything in the input is in the alpahbet"""
+    """Check if the everything in the input is in the alpahbet."""
     invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
         print(invalid_str)
         string = str(input(question_01))
     return string
 
+
 def int_checker(question_02):
-    """Checks the input was a null or string repeats until receives a int."""
+    """Check the input was a null or string repeats until receives a int."""
     invalid = "\n You must enter an integer that's from 5 to 11\n"
     num = ""
     while not num:
@@ -22,16 +27,18 @@ def int_checker(question_02):
         except ValueError:
             print(invalid)
 
+
 def welcome_screen():
-    """Prints a welcome statement"""
+    """Print a welcome statement."""
     print()
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("Welcome to the 'General Knowledge Quiz about NZ!'")
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print()
 
+
 def ask_name():
-    """Asks what their name is"""
+    """Asks what their name is."""
     invalid_length = "\nSorry please enter a valid name length\n"
     name = input("What is your name?: ").title()
     set_name = str_checker(name, "What is your name?: ").title()
@@ -40,9 +47,11 @@ def ask_name():
         name = input("What is your name?: ").title()
         set_name = str_checker(name, "What is your name?: ").title()
     return set_name
+    # Return the name and use this to greet them
+
 
 def ask_age():
-    """Asks for their age"""
+    """Asks for their age."""
     invalid_age = "\n You must enter an whole number that's from 5 to 11\n"
     age = int_checker("What is your age?\n"
                       "(This will pick which Quiz you will be trying): ")
@@ -51,15 +60,17 @@ def ask_age():
         age = int_checker("What is your age?\n"
                           "(This will pick which Quiz you will be trying): ")
     return age
+    # Return their age and using this pick which Quiz they will do
+
 
 def instructions():
-    """Print a list of instructions"""
+    """Print a list of instructions."""
     invalid_answer = "\n Sorry, you must enter a vaild option\n"
     list_rules = input("(***Highly Recommended***) "
-                       "\n\tWould you like a list of the Rules? " 
+                       "\n\tWould you like a list of the Rules?"
                        "'Y' or 'N': ").title()
     final_list_rules = str_checker(list_rules, "(***Highly Recommended***) "
-                                   "\n\tWould you like a list of the Rules? " 
+                                   "\n\tWould you like a list of the Rules?"
                                    "'Y' or 'N': ").title()
     if final_list_rules in YES:
         print("\nThe Rules of this game are as follows:")
@@ -75,6 +86,7 @@ def instructions():
     else:
         print(invalid_answer)
         instructions()
+        # Loop the funtion until they put in a valid option
 
 
 AGE_MINIMUM = 5
@@ -84,9 +96,9 @@ YES = ["Yes", "Y"]
 NO = ["No", "N"]
 
 main_total_score = 0
+# Use this variable for the total score for the quizzes
 
-
-#Main Routine
+# Main Routine
 welcome_screen()
 main_set_name = ask_name()
 main_age = ask_age()

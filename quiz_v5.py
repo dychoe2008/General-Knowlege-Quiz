@@ -1,5 +1,7 @@
 """Program for a general knowledge quiz about NZ V5.
+
 This version will include component 1, 2, 3, 4 part 1 and part 2, 5
+
 By Daniel C
 """
 # pylint: disable = c0103
@@ -45,6 +47,7 @@ def ask_name():
         name = input("What is your name?: ").title()
         set_name = str_checker(name, "What is your name?: ").title()
     return set_name
+    # Return the name and use this to greet them
 
 
 def ask_age():
@@ -57,14 +60,17 @@ def ask_age():
         age = int_checker("What is your age?\n"
                           "(This will pick which Quiz you will be trying): ")
     return age
+    # Return their age and using this pick which Quiz they will do
+
+
 def instructions():
-    """Print a list of instructions"""
+    """Print a list of instructions."""
     invalid_answer = "\n Sorry, you must enter a vaild option\n"
     list_rules = input("(***Highly Recommended***) "
-                       "\n\tWould you like a list of the Rules? " 
+                       "\n\tWould you like a list of the Rules?"
                        "'Y' or 'N': ").title()
     final_list_rules = str_checker(list_rules, "(***Highly Recommended***) "
-                                   "\n\tWould you like a list of the Rules? " 
+                                   "\n\tWould you like a list of the Rules?"
                                    "'Y' or 'N': ").title()
     if final_list_rules in YES:
         print("\nThe Rules of this game are as follows:")
@@ -80,8 +86,11 @@ def instructions():
     else:
         print(invalid_answer)
         instructions()
+        # Loop the funtion until they put in a valid option
+
+
 def quiz_a():
-    """questions for quiz A"""
+    """Questions for quiz A."""
     total_score = 0
     print("\nWelcome to Quiz A!\n")
     print(">>First Question<<")
@@ -131,8 +140,11 @@ def quiz_a():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[0]}\n")
     return total_score
+    # Return your score from Quiz A
+
+
 def quiz_b():
-    """questions for quiz B"""
+    """Questions for quiz B."""
     total_score = 0
     print("\nWelcome to Quiz B!\n")
     print(">>First Question<<")
@@ -175,7 +187,7 @@ def quiz_b():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[0]}\n")
     print(">>Fifth Question<<")
-    print("Whrn was the Treaty of Waitangi signted?:")
+    print("When was the Treaty of Waitangi signed?:")
     print("\tA = 1815\n\tB = 1840\n\tC = 1855\n\tD = 1875")
     guess_for_question_5 = input_for_quiz()
     if guess_for_question_5 == RANGE_OF_ANSWERS[1]:
@@ -184,8 +196,11 @@ def quiz_b():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[1]}\n")
     return total_score
+    # Return your score for Quiz B
+
+
 def input_for_quiz():
-    """funtion to ask which option they want to choose"""
+    """Funtion to ask which option they want to choose."""
     invalid_guess = "\n Sorry, you must enter a vaild guess\n"
     guess = input("Which of these options will you choose?: ").title()
     guess_confirmed = str_checker(guess, "Which of these options"
@@ -196,8 +211,11 @@ def input_for_quiz():
         guess_confirmed = str_checker(guess, "Which of these options"
                                       " will you choose?: ").title()
     return guess_confirmed
+    # Return your guess from the options A,B,C,D
+
+
 def play_again():
-    """funtion to play the quiz again"""
+    """Funtion to play the quiz again."""
     invalid = "\n Sorry, you must enter a valid option\n"
     ask_play = input("Would you like to play again?: ").title()
     play_again_confirmed = str_checker(ask_play, "Would you like to"
@@ -209,19 +227,26 @@ def play_again():
                                            " play again?: ").title()
     if play_again_confirmed in YES:
         play_again_confirmed = True
+        # Return TRUE to keep the loop going
         return play_again_confirmed
     else:
         play_again_confirmed = False
+        # Return FALSE to stop the loop and end the program
         return play_again_confirmed
+
+
 AGE_MINIMUM = 5
 AGE_MAXIMUM = 11
 YES_NO = ["Yes", "Y", "No", "N"]
 YES = ["Yes", "Y"]
 NO = ["No", "N"]
 RANGE_OF_ANSWERS = ["A", "B", "C", "D"]
+
 main_total_score = 0
-#Main Routine
+
+# Main Routine
 play = True
+# Boolean for the loop
 while play:
     welcome_screen()
     main_set_name = ask_name()

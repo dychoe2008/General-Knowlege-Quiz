@@ -1,17 +1,22 @@
-"""Component 4 part 1, Quiz A
+"""Component 4 part 1, Quiz A.
+
 Make Quiz a
+
 By Daniel C
 """
+
+
 def str_checker(string, question_01):
-    """Checks if the everything in the input is in the alpahbet"""
-    invalid = "\n Sorry, you must enter a vaild input\n"
+    """Check if the everything in the input is in the alpahbet."""
+    invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
-        print(invalid)
+        print(invalid_str)
         string = str(input(question_01))
     return string
 
+
 def quiz_a():
-    """questions for quiz A"""
+    """Questions for quiz A."""
     total_score = 0
     print("\nWelcome to Quiz A!\n")
     print(">>First Question<<")
@@ -61,9 +66,11 @@ def quiz_a():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[0]}\n")
     return total_score
+    # Return your score from Quiz A
+
 
 def input_for_quiz():
-    """funtion to ask which option they want to choose"""
+    """Funtion to ask which option they want to choose."""
     invalid_guess = "\n Sorry, you must enter a vaild guess\n"
     guess = input("Which of these options will you choose?: ").title()
     guess_confirmed = str_checker(guess, "Which of these options"
@@ -74,10 +81,12 @@ def input_for_quiz():
         guess_confirmed = str_checker(guess, "Which of these options"
                                       " will you choose?: ").title()
     return guess_confirmed
+    # Return your guess from the options A,B,C,D
 
 
 RANGE_OF_ANSWERS = ["A", "B", "C", "D"]
 
-#Main Routine
+# Main Routine
 main_total_score = quiz_a()
 print(main_total_score)
+# Make sure to add text to this print statement not just the number

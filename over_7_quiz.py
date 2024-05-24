@@ -1,17 +1,22 @@
-"""Component 4 part 2, Quiz B
+"""Component 4 part 2, Quiz B.
+
 Make Quiz b
+
 By Daniel C
 """
+
+
 def str_checker(string, question_01):
-    """Checks if the everything in the input is in the alpahbet"""
-    invalid = "\n Sorry, you must enter a vaild input\n"
+    """Check if the everything in the input is in the alpahbet."""
+    invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
-        print(invalid)
+        print(invalid_str)
         string = str(input(question_01))
     return string
 
+
 def quiz_b():
-    """questions for quiz B"""
+    """Questions for quiz B."""
     total_score = 0
     print("\nWelcome to Quiz B!\n")
     print(">>First Question<<")
@@ -54,7 +59,7 @@ def quiz_b():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[0]}\n")
     print(">>Fifth Question<<")
-    print("Whrn was the Treaty of Waitangi signted?:")
+    print("When was the Treaty of Waitangi signed?:")
     print("\tA = 1815\n\tB = 1840\n\tC = 1855\n\tD = 1875")
     guess_for_question_5 = input_for_quiz()
     if guess_for_question_5 == RANGE_OF_ANSWERS[1]:
@@ -63,9 +68,11 @@ def quiz_b():
     else:
         print(f"That was Incorrect! The Answer was {RANGE_OF_ANSWERS[1]}\n")
     return total_score
+    # Return your score for Quiz B
+
 
 def input_for_quiz():
-    """funtion to ask which option they want to choose"""
+    """Funtion to ask which option they want to choose."""
     invalid_guess = "\n Sorry, you must enter a vaild guess\n"
     guess = input("Which of these options will you choose?: ").title()
     guess_confirmed = str_checker(guess, "Which of these options"
@@ -76,10 +83,12 @@ def input_for_quiz():
         guess_confirmed = str_checker(guess, "Which of these options"
                                       " will you choose?: ").title()
     return guess_confirmed
+    # Return your guess from the options A,B,C,D
 
 
 RANGE_OF_ANSWERS = ["A", "B", "C", "D"]
 
-#Main Routine
+# Main Routine
 main_total_score = quiz_b()
 print(main_total_score)
+# Make sure to add text to this print statement not just the number

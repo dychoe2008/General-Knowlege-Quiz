@@ -1,26 +1,32 @@
-"""Component 1, the weclome screen
+"""Component 1, the weclome screen.
+
 Make a welcome screen, make a string checker, ask for their name
+
 By Daniel C
 """
 # pylint: disable = c0103
+
+
 def str_checker(string, question_01):
-    """Checks if the everything in the input is in the alpahbet"""
-    invalid_str = "\n Sorry, you must enter a vaild name\n"
+    """Check if the everything in the input is in the alpahbet."""
+    invalid_str = "\n Sorry, you must enter a vaild input\n"
     while string.isalpha() is False:
         print(invalid_str)
         string = str(input(question_01))
     return string
 
+
 def welcome_screen():
-    """Prints a welcome statement"""
+    """Print a welcome statement."""
     print()
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("Welcome to the 'General Knowledge Quiz about NZ!'")
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print()
 
+
 def ask_name():
-    """Asks what their name is"""
+    """Asks what their name is."""
     invalid_length = "\nSorry please enter a valid name length\n"
     name = input("What is your name?: ").title()
     set_name = str_checker(name, "What is your name?: ").title()
@@ -29,10 +35,13 @@ def ask_name():
         name = input("What is your name?: ").title()
         set_name = str_checker(name, "What is your name?: ").title()
     return set_name
+    # Return the name and use this to greet them
+
 
 main_total_score = 0
+# Use this variable for the total score for the quizzes
 
-#Main Routine
+# Main Routine
 welcome_screen()
 main_set_name = ask_name()
 print(f"\t\tHello {main_set_name}!!!")
