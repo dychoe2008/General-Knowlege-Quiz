@@ -90,4 +90,5 @@ main_total_score = 0
 welcome_screen()
 name_set = ask_name()
 main_age = ask_age()
+print(f"\t\tHello {name_set}!!!")
 instructions()

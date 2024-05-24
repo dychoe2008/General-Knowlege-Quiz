@@ -216,6 +216,7 @@ while play:
     welcome_screen()
     name_set = ask_name()
     main_age = ask_age()
+    print(f"\t\tHello {name_set}!!!")
     instructions()
     if main_age <= 7:
         main_total_score = quiz_a()

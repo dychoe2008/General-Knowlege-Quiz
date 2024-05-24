@@ -34,3 +34,4 @@ main_total_score = 0
 #Main Routine
 welcome_screen()
 name_set = ask_name()
+print(f"\t\tHello {name_set}!!!")
