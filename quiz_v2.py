@@ -33,12 +33,12 @@ def welcome_screen():
 def ask_name():
     """Asks what their name is"""
     invalid_length = "\nSorry please enter a valid name length\n"
-    name = input("What is your name?: ")
-    set_name = str_checker(name, "What is your name?: ")
+    name = input("What is your name?: ").title()
+    set_name = str_checker(name, "What is your name?: ").title()
     while len(set_name) < 3:
         print(invalid_length)
-        name = input("What is your name?: ")
-        set_name = str_checker(name, "What is your name?: ")
+        name = input("What is your name?: ").title()
+        set_name = str_checker(name, "What is your name?: ").title()
     return set_name
 
 def ask_age():
@@ -61,6 +61,6 @@ main_total_score = 0
 
 #Main Routine
 welcome_screen()
-name_set = ask_name()
+main_set_name = ask_name()
 main_age = ask_age()
-print(f"\t\tHello {name_set}!!!")
+print(f"\t\tHello {main_set_name}!!!")
