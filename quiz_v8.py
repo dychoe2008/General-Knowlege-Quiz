@@ -1,14 +1,8 @@
-"""Program for a general knowledge quiz about NZ V7.
+"""Program for a general knowledge quiz about NZ V8.
 
-This version will include component 1, 2, 3, 4 part 1 and part 2, 5
+This version will include everything from the other Versions of the Quiz
 
-Along with this it will have the first piece of advice (age range) and second 
-
-piece of advice (minimum name length), I shorten the questions in both quizzes, 
-
-option list in every question (A,B,C,D), Y or N range in "play again" function
-
-getting rid of unnecessary .title()
+and I added a list for your name, got rid of some comments
 
 By Daniel C
 """
@@ -70,7 +64,6 @@ def ask_age():
         age = int_checker("What is your age?\n"
                           "(This will pick which Quiz you will be trying): ")
     return age
-    # Return their age and using this pick which Quiz they will do
 
 
 def instructions():
@@ -210,7 +203,6 @@ def input_for_quiz():
         guess_confirmed = str_checker(guess, "Which of these options"
                                       " will you choose? (A,B,C,D): ").title()
     return guess_confirmed
-    # Return your guess from the options A,B,C,D
 
 
 def play_again():
@@ -247,10 +239,12 @@ main_total_score = 0
 play = True
 # Boolean for the loop
 while play:
+    main_set_name = []
     welcome_screen()
-    main_set_name = ask_name()
+    main_set_name.append(ask_name())
     main_age = ask_age()
-    print(f"\t\tHello {main_set_name}!!!")
+    for names in main_set_name:
+        print(f"\t\tHello {main_set_name[0]}!!!")
     instructions()
     if main_age <= 7:
         main_total_score = quiz_a()
